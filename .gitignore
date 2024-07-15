@@ -1,0 +1,47 @@
+# Ignore Obsidian workspace settings
+.obsidian/
+
+# Ignore virtual environment
+venv/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore plugin folders
+.trash/
+.cache/
+
+# Ignore mobile app config
+.mobile/
+
+# Ignore configuration files that may contain sensitive information
+.env
+config.json
+
+# Ignore backups
+*.bak
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore log files
+*.log
+
+# Ignore compiled files
+*.pyc
+*.class
+
+# Ignore media files (uncomment if you don't want to track these)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.mp3
+# *.mp4
+
+# Ignore large binary files (uncomment if needed)
+# *.pdf
+# *.docx
+# *.xlsx
