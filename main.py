@@ -29,7 +29,7 @@ def convert_md_to_html(input_file, output_file):
                     font-family: Arial, sans-serif;
                     line-height: 1.6;
                     padding: 20px;
-                    max-width: 800px;
+                    max-width: 600px;
                     margin: 0 auto;
                 }}
             </style>
