@@ -94,7 +94,7 @@ def watch_file(input_file, output_file):
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     input_file = os.path.join(script_dir, "src", "Story.md")
-    output_file = os.path.join(script_dir, "build", "index.html")
+    output_file = os.path.join(script_dir, "docs", "index.html")
     
     if not os.path.exists(input_file):
         print(f"Error: The input file '{input_file}' does not exist.")
