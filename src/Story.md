@@ -1,8 +1,6 @@
-# The Ritual of Preservation!
+# The Ritual of Preservation
 
 # Chapter 1: The Ritual of Bonding
-
-typing typing typing typing oh wow I'm typing...
 
 "You're brooding again, young Kai," a familiar voice chided. I turned to find Erol, our tribe's shaman, his weathered face creased with a knowing smile. "The fire will still be there after you've rested."
 
