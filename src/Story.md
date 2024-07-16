@@ -1,6 +1,6 @@
 # The Ritual of Preservation
 
-![Kai](Images/1.jpg)
+![Kai](src/images/1.jpg)
 
 # Chapter 1: The Ritual of Bonding
 
@@ -143,7 +143,7 @@ I teetered on the edge of confession. Lira had been my confidante since childhoo
 
 The words felt like ash in my mouth, each one a betrayal of our friendship. Lira's face fell, confusion and hurt flickering across her features.
 
-![Kai](Images/1.jpg)
+![Kai](src/images/1.jpg)
 # Chapter 2: Seeds of Suspicion
 
 The dawn after my Bonding brought no clarity, only a deepening sense of unease. As I emerged from my dwelling, the village bustled with its usual morning activities, but I felt disconnected from it all, as if viewing the world through a veil.
@@ -250,7 +250,7 @@ I hesitated, torn between my longing for a confidant and the warning that still 
 
 "Please," Lira said, her eyes pleading. "I know something's wrong. Let me help you."
 
-![Kai](Images/1.jpg)
+![Kai](src/images/1.jpg)
 
 For a moment, I teetered on the edge of confession. But then I saw the fear in Erol's eyes, heard the urgency in his voice. Whatever was happening to me, it was dangerous – not just to me, but to everyone around me.
 
@@ -318,7 +318,7 @@ One by one, the elders approached, each adding their own marks to my skin. Some 
 
 As the last rays of sunlight faded from the sky, Mera raised her voice once more. "Kai, you are now exiled from the Teurek. You may not return unless called back by the council. May the spirits guide your path."
 
-![Kai](Images/1.jpg)
+![Kai](src/images/1.jpg)
 # Chapter 3: Exile
 
 The last echoes of Mera's words faded into the gathering darkness as I turned my back on everything I had ever known. The weight of the ceremonial ashes on my skin felt like chains, binding me to a fate I neither understood nor wanted. With each step that took me further from the village, the whispers of my tribe—once so familiar and comforting—grew fainter, replaced by the rustling of leaves and the call of night birds.
@@ -369,7 +369,7 @@ The sun began to set, casting long shadows through the trees. I made my way back
 
 As I settled in for another night, gathering wood for a small fire, I found myself longing for the simplest things. The comfort of my own bed. The sound of my mother humming as she worked. The smell of Erol's herb-filled hut. All the tiny, inconsequential details that had made up the tapestry of my life, now lost to me.
 
-![Kai](Images/1.jpg)
+![Kai](src/images/1.jpg)
 
 # Chapter 4: Survival and Discovery
 

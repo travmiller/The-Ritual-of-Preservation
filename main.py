@@ -79,7 +79,7 @@ def convert_md_to_html_pages(input_file, output_dir):
         navigation_html = create_navigation_html(chapter_info)
 
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        src_img_dir = os.path.join(script_dir, "src", "Images")
+        src_img_dir = os.path.join(script_dir, "src", "images")
         dest_img_dir = os.path.join(output_dir, "images")
         copied_images = copy_images(src_img_dir, dest_img_dir)
 
