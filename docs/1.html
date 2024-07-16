@@ -43,8 +43,8 @@
             display: flex;
             justify-content: space-between;
             margin-top: 2rem;
+            position: sticky;
             padding: 2rem 0;
-
         }
         .btn {
             background-color: #fff;
@@ -58,6 +58,21 @@
             background-color: #000;
             color: #fff;
         }
+        .toc-container {
+            margin-bottom: 2rem;
+        }
+        .toc-entry {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .toc-entry a {
+            text-decoration: underline;
+            color: #000;
+        }
+        .toc-entry .page-num {
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -66,8 +81,11 @@
             <div>Page 1 | The Ritual of Preservation</div>
         </div>
         <article class="chapter-content">
-            <h2>Table of Contents</h2><ul><li><a href="1.html">Chapter 1: The Ritual of Bonding</a> (Page 1)</li><li><a href="8.html">Chapter 2: Seeds of Suspicion</a> (Page 8)</li><li><a href="16.html">Chapter 3: Exile</a> (Page 16)</li><li><a href="21.html">Chapter 4: Survival and Discovery</a> (Page 21)</li></ul><p><img alt="Kai" src="images/1.jpg"/></p>
-<h1>Chapter 1: The Ritual of Bonding</h1>
+            
+    <h2>Table of Contents</h2>
+    <div class="toc-container">
+    <div class="toc-entry"><a href="1.html#chapter-1-the-ritual-of-bonding">Chapter 1: The Ritual of Bonding</a><span class="page-num">1</span></div><div class="toc-entry"><a href="8.html#chapter-2-seeds-of-suspicion">Chapter 2: Seeds of Suspicion</a><span class="page-num">8</span></div><div class="toc-entry"><a href="16.html#chapter-3-exile">Chapter 3: Exile</a><span class="page-num">16</span></div><div class="toc-entry"><a href="21.html#chapter-4-survival-and-discovery">Chapter 4: Survival and Discovery</a><span class="page-num">21</span></div></div><p><img alt="Kai" src="images/1.jpg"/></p>
+<h1 id="chapter-1-the-ritual-of-bonding">Chapter 1: The Ritual of Bonding</h1>
 <p>"You're brooding again, young Kai," a familiar voice chided. I turned to find Erol, our tribe's shaman, his weathered face creased with a knowing smile. "The fire will still be there after you've rested."</p>
 <p>I nodded, not trusting my voice. Erol had been more than a teacher these past years; he'd been a second father, guiding me through the labyrinth of shamanic lore. Now, on the eve of my Bonding, I found myself wishing for a few more years under his tutelage.</p>
 <p>"Come," he said, placing a gnarled hand on my shoulder. "Walk with an old man."</p>

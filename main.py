@@ -53,20 +53,34 @@ def copy_images(src_dir, dest_dir):
             print(f"Copied {img} to {dest_path}")
     return copied_files
 
+def slugify(text):
+    # Convert to lowercase and replace spaces with hyphens
+    text = text.lower().replace(' ', '-')
+    # Remove non-word characters (everything except numbers and letters)
+    text = re.sub(r'[^\w\-]', '', text)
+    # Remove consecutive hyphens
+    text = re.sub(r'\-+', '-', text)
+    return text
+
 def extract_chapter_titles_and_locations(pages):
     chapter_info = []
     for i, page_content in enumerate(pages, start=1):
         soup = BeautifulSoup(markdown.markdown(page_content), 'html.parser')
         headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
         for heading in headings:
-            chapter_info.append((heading.text.strip(), i))
+            title = heading.text.strip()
+            anchor = slugify(title)
+            chapter_info.append((title, i, anchor))
     return chapter_info
 
 def create_table_of_contents(chapter_info):
-    toc_html = '<h2>Table of Contents</h2><ul>'
-    for title, page_num in chapter_info:
-        toc_html += f'<li><a href="{page_num}.html">{title}</a> (Page {page_num})</li>'
-    toc_html += '</ul>'
+    toc_html = '''
+    <h2>Table of Contents</h2>
+    <div class="toc-container">
+    '''
+    for title, page_num, anchor in chapter_info:
+        toc_html += f'<div class="toc-entry"><a href="{page_num}.html#{anchor}">{title}</a><span class="page-num">{page_num}</span></div>'
+    toc_html += '</div>'
     return toc_html
 
 def convert_md_to_html_pages(input_file, output_dir):
@@ -86,8 +100,12 @@ def convert_md_to_html_pages(input_file, output_dir):
         for i, page_content in enumerate(pages, start=1):
             html_content = markdown.markdown(page_content, extensions=['extra'])
 
-            # Process image links in the markdown content
+            # Add anchor IDs to headings
             soup = BeautifulSoup(html_content, 'html.parser')
+            for heading in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']):
+                heading['id'] = slugify(heading.text)
+
+            # Process image links in the markdown content
             for img in soup.find_all('img'):
                 src = img.get('src')
                 if src:
@@ -149,8 +167,8 @@ def convert_md_to_html_pages(input_file, output_dir):
             display: flex;
             justify-content: space-between;
             margin-top: 2rem;
+            position: sticky;
             padding: 2rem 0;
-
         }}
         .btn {{
             background-color: #fff;
@@ -163,6 +181,21 @@ def convert_md_to_html_pages(input_file, output_dir):
         .btn:hover {{
             background-color: #000;
             color: #fff;
+        }}
+        .toc-container {{
+            margin-bottom: 2rem;
+        }}
+        .toc-entry {{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }}
+        .toc-entry a {{
+            text-decoration: underline;
+            color: #000;
+        }}
+        .toc-entry .page-num {{
+            color: #666;
         }}
     </style>
 </head>
