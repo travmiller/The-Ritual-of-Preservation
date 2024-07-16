@@ -90,7 +90,7 @@ def convert_md_to_html_pages(input_file, output_dir):
             soup = BeautifulSoup(html_content, 'html.parser')
             for img in soup.find_all('img'):
                 src = img.get('src')
-                if src and src.startswith('images/'):
+                if src:
                     img_filename = os.path.basename(src)
                     if img_filename in copied_images:
                         img['src'] = f"images/{img_filename}"
@@ -98,12 +98,6 @@ def convert_md_to_html_pages(input_file, output_dir):
                     else:
                         print(f"Warning: Image {img_filename} referenced but not found in the images directory")
 
-            html_content = str(soup)
-
-            # Add id attributes to headings
-            soup = BeautifulSoup(html_content, 'html.parser')
-            for j, heading in enumerate(soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']), start=1):
-                heading['id'] = f"heading-{j}"
             html_content = str(soup)
 
             html_template = f"""
