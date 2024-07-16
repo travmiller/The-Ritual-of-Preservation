@@ -62,12 +62,12 @@ def extract_chapter_titles_and_locations(pages):
             chapter_info.append((heading.text.strip(), i))
     return chapter_info
 
-def create_navigation_html(chapter_info):
-    nav_html = '<nav id="chapter-nav"><ul>'
+def create_table_of_contents(chapter_info):
+    toc_html = '<h2>Table of Contents</h2><ul>'
     for title, page_num in chapter_info:
-        nav_html += f'<li><a href="{page_num}.html">{title}</a></li>'
-    nav_html += '</ul></nav>'
-    return nav_html
+        toc_html += f'<li><a href="{page_num}.html">{title}</a> (Page {page_num})</li>'
+    toc_html += '</ul>'
+    return toc_html
 
 def convert_md_to_html_pages(input_file, output_dir):
     try:
@@ -76,7 +76,7 @@ def convert_md_to_html_pages(input_file, output_dir):
 
         pages = split_content_into_pages(md_content)
         chapter_info = extract_chapter_titles_and_locations(pages)
-        navigation_html = create_navigation_html(chapter_info)
+        table_of_contents = create_table_of_contents(chapter_info)
 
         script_dir = os.path.dirname(os.path.abspath(__file__))
         src_img_dir = os.path.join(script_dir, "src", "images")
@@ -100,6 +100,10 @@ def convert_md_to_html_pages(input_file, output_dir):
 
             html_content = str(soup)
 
+            # Add table of contents to the first page
+            if i == 1:
+                html_content = table_of_contents + html_content
+
             html_template = f"""
 <!DOCTYPE html>
 <html lang="en">
@@ -115,37 +119,15 @@ def convert_md_to_html_pages(input_file, output_dir):
             background-color: #fff;
             margin: 0;
             padding: 0;
-            display: flex;
         }}
-        #chapter-nav {{
-            width: 250px;
-            height: 100vh;
-            overflow-y: auto;
-            position: sticky;
-            top: 0;
-            background-color: #f4f4f4;
-            padding: 1rem;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-        }}
-        #chapter-nav ul {{
-            list-style-type: none;
-            padding: 0;
-        }}
-        #chapter-nav li {{
-            margin-bottom: 0.5rem;
-        }}
-        #chapter-nav a {{
-            text-decoration: none;
-            color: #333;
-        }}
-        #chapter-nav a:hover {{
-            text-decoration: underline;
+        .page-header {{
+            text-align: center;
+            padding: 1rem 0;
         }}
         main {{
-            flex-grow: 1;
-            max-width: 600px;
+            max-width: 800px;
             width: 90%;
-            margin: 2rem auto;
+            margin: auto auto;
         }}
         h1, h2, h3, h4, h5, h6 {{
             margin-top: 1.5em;
@@ -155,8 +137,8 @@ def convert_md_to_html_pages(input_file, output_dir):
             margin-bottom: 1em;
         }}
         img {{
-          max-width: 100%;
-          height: auto;
+            max-width: 100%;
+            height: auto;
         }}
         .chapter-content {{
             margin-bottom: 2rem;
@@ -165,8 +147,8 @@ def convert_md_to_html_pages(input_file, output_dir):
             display: flex;
             justify-content: space-between;
             margin-top: 2rem;
-            padding-top: 1rem;
-            border-top: 1px solid #000;
+            padding: 2rem 0;
+
         }}
         .btn {{
             background-color: #fff;
@@ -180,30 +162,13 @@ def convert_md_to_html_pages(input_file, output_dir):
             background-color: #000;
             color: #fff;
         }}
-        footer {{
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.8rem;
-            border-top: 1px solid #000;
-        }}
-        @media (max-width: 768px) {{
-            body {{
-                flex-direction: column;
-            }}
-            #chapter-nav {{
-                width: 100%;
-                height: auto;
-                position: static;
-            }}
-            main {{
-                width: 95%;
-            }}
-        }}
     </style>
 </head>
 <body>
-    {navigation_html}
     <main>
+        <div class="page-header">
+            <div>Page {i} | The Ritual of Preservation</div>
+        </div>
         <article class="chapter-content">
             {html_content}
         </article>
@@ -212,9 +177,6 @@ def convert_md_to_html_pages(input_file, output_dir):
             <a href="{i+1}.html" class="btn" {'style="visibility: hidden;"' if i == len(pages) else ''}>Next Page</a>
         </div>
     </main>
-    <footer>
-        <p>Page {i} | The Ritual of Preservation! &copy; 2024</p>
-    </footer>
 </body>
 </html>
             """
