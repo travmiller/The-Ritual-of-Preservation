@@ -1,5 +1,3 @@
-# The Ritual of Preservation
-
 ![Kai](src/images/1.jpg)
 
 # Chapter 1: The Ritual of Bonding

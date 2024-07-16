@@ -63,13 +63,10 @@ def extract_chapter_titles_and_locations(pages):
     return chapter_info
 
 def create_table_of_contents(chapter_info):
-    toc_html = '''
-    <h2>Table of Contents</h2>
-    <div class="toc-container">
-    '''
+    toc_html = '<h2>Table of Contents</h2><ul>'
     for title, page_num in chapter_info:
-        toc_html += f'<div class="toc-entry"><a href="{page_num}.html">{title}</a><span class="page-num">{page_num}</span></div>'
-    toc_html += '</div>'
+        toc_html += f'<li><a href="{page_num}.html">{title}</a> (Page {page_num})</li>'
+    toc_html += '</ul>'
     return toc_html
 
 def convert_md_to_html_pages(input_file, output_dir):
@@ -153,6 +150,7 @@ def convert_md_to_html_pages(input_file, output_dir):
             justify-content: space-between;
             margin-top: 2rem;
             padding: 2rem 0;
+
         }}
         .btn {{
             background-color: #fff;
@@ -165,21 +163,6 @@ def convert_md_to_html_pages(input_file, output_dir):
         .btn:hover {{
             background-color: #000;
             color: #fff;
-        }}
-        .toc-container {{
-            margin-bottom: 2rem;
-        }}
-        .toc-entry {{
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-        }}
-        .toc-entry a {{
-            text-decoration: none;
-            color: #000;
-        }}
-        .toc-entry .page-num {{
-            color: #666;
         }}
     </style>
 </head>
@@ -208,7 +191,7 @@ def convert_md_to_html_pages(input_file, output_dir):
         print(f"Conversion complete. HTML files saved in {output_dir}")
     except Exception as e:
         print(f"Error during conversion: {str(e)}")
-        
+
 class MarkdownHandler(FileSystemEventHandler):
     def __init__(self, input_file, output_dir):
         self.input_file = input_file
