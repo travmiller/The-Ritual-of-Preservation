@@ -17,11 +17,13 @@
         .page-header {
             text-align: center;
             padding: 1rem 0;
+            font-size: .75rem;
+            margin-bottom: 2rem;
         }
         main {
-            max-width: 800px;
+            max-width: 600px;
             width: 90%;
-            margin: auto auto;
+            margin: 2rem auto;
         }
         h1, h2, h3, h4, h5, h6 {
             margin-top: 1.5em;
@@ -42,7 +44,6 @@
             justify-content: space-between;
             margin-top: 2rem;
             padding: 2rem 0;
-
         }
         .btn {
             background-color: #fff;
@@ -56,6 +57,21 @@
             background-color: #000;
             color: #fff;
         }
+        .toc-container {
+            margin-bottom: 2rem;
+        }
+        .toc-entry {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        .toc-entry a {
+            text-decoration: none;
+            color: #000;
+        }
+        .toc-entry .page-num {
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -64,7 +80,10 @@
             <div>Page 1 | The Ritual of Preservation</div>
         </div>
         <article class="chapter-content">
-            <h2>Table of Contents</h2><ul><li><a href="1.html">The Ritual of Preservation</a> (Page 1)</li><li><a href="1.html">Chapter 1: The Ritual of Bonding</a> (Page 1)</li><li><a href="8.html">Chapter 2: Seeds of Suspicion</a> (Page 8)</li><li><a href="16.html">Chapter 3: Exile</a> (Page 16)</li><li><a href="21.html">Chapter 4: Survival and Discovery</a> (Page 21)</li></ul><h1>The Ritual of Preservation</h1>
+            
+    <h2>Table of Contents</h2>
+    <div class="toc-container">
+    <div class="toc-entry"><a href="1.html">The Ritual of Preservation</a><span class="page-num">1</span></div><div class="toc-entry"><a href="1.html">Chapter 1: The Ritual of Bonding</a><span class="page-num">1</span></div><div class="toc-entry"><a href="8.html">Chapter 2: Seeds of Suspicion</a><span class="page-num">8</span></div><div class="toc-entry"><a href="16.html">Chapter 3: Exile</a><span class="page-num">16</span></div><div class="toc-entry"><a href="21.html">Chapter 4: Survival and Discovery</a><span class="page-num">21</span></div></div><h1>The Ritual of Preservation</h1>
 <p><img alt="Kai" src="images/1.jpg"/></p>
 <h1>Chapter 1: The Ritual of Bonding</h1>
 <p>"You're brooding again, young Kai," a familiar voice chided. I turned to find Erol, our tribe's shaman, his weathered face creased with a knowing smile. "The fire will still be there after you've rested."</p>

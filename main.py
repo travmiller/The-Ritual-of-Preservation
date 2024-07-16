@@ -63,10 +63,13 @@ def extract_chapter_titles_and_locations(pages):
     return chapter_info
 
 def create_table_of_contents(chapter_info):
-    toc_html = '<h2>Table of Contents</h2><ul>'
+    toc_html = '''
+    <h2>Table of Contents</h2>
+    <div class="toc-container">
+    '''
     for title, page_num in chapter_info:
-        toc_html += f'<li><a href="{page_num}.html">{title}</a> (Page {page_num})</li>'
-    toc_html += '</ul>'
+        toc_html += f'<div class="toc-entry"><a href="{page_num}.html">{title}</a><span class="page-num">{page_num}</span></div>'
+    toc_html += '</div>'
     return toc_html
 
 def convert_md_to_html_pages(input_file, output_dir):
@@ -123,11 +126,13 @@ def convert_md_to_html_pages(input_file, output_dir):
         .page-header {{
             text-align: center;
             padding: 1rem 0;
+            font-size: .75rem;
+            margin-bottom: 2rem;
         }}
         main {{
-            max-width: 800px;
+            max-width: 600px;
             width: 90%;
-            margin: auto auto;
+            margin: 2rem auto;
         }}
         h1, h2, h3, h4, h5, h6 {{
             margin-top: 1.5em;
@@ -148,7 +153,6 @@ def convert_md_to_html_pages(input_file, output_dir):
             justify-content: space-between;
             margin-top: 2rem;
             padding: 2rem 0;
-
         }}
         .btn {{
             background-color: #fff;
@@ -161,6 +165,21 @@ def convert_md_to_html_pages(input_file, output_dir):
         .btn:hover {{
             background-color: #000;
             color: #fff;
+        }}
+        .toc-container {{
+            margin-bottom: 2rem;
+        }}
+        .toc-entry {{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }}
+        .toc-entry a {{
+            text-decoration: none;
+            color: #000;
+        }}
+        .toc-entry .page-num {{
+            color: #666;
         }}
     </style>
 </head>
@@ -189,7 +208,7 @@ def convert_md_to_html_pages(input_file, output_dir):
         print(f"Conversion complete. HTML files saved in {output_dir}")
     except Exception as e:
         print(f"Error during conversion: {str(e)}")
-
+        
 class MarkdownHandler(FileSystemEventHandler):
     def __init__(self, input_file, output_dir):
         self.input_file = input_file
