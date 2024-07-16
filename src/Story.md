@@ -135,11 +135,7 @@ A soft knock at my door startled me from my restless thoughts. I opened it to fi
 
 "Kai," she whispered, glancing nervously over her shoulder. "I need to talk to you. It's about... it's about the Bonding."
 
-I teetered on the edge of confession. Lira had been my confidante since childhood. If anyone would understand, it would be her.
-
 "Lira," I heard myself say, my voice oddly calm, "I appreciate your concern. But I assure you, everything is fine.
-
-The words felt like ash in my mouth, each one a betrayal of our friendship. Lira's face fell, confusion and hurt flickering across her features.
 
 # Chapter 2: Seeds of Suspicion
 
@@ -237,31 +233,11 @@ The intensity in his voice frightened me more than the vision had. I nodded mute
 
 As I stumbled back to my dwelling, my mind reeled. The forgotten ones? The price of preservation? What could it all mean?
 
-That night, sleep eluded me once again. The whispering presence in my mind had grown stronger, more insistent. Images flashed behind my closed eyelids – fragments of memories that weren't my own, glimpses of a world long past.
-
-A soft knock at my door jolted me from my troubled thoughts. I opened it to find Lira, her face pale in the moonlight.
-
-"Kai," she whispered, glancing nervously over her shoulder. "We need to talk."
-
-I hesitated, torn between my longing for a confidant and the warning that still echoed in my ears. *You must not speak of this to anyone.*
-
-"Please," Lira said, her eyes pleading. "I know something's wrong. Let me help you."
-
-For a moment, I teetered on the edge of confession. But then I saw the fear in Erol's eyes, heard the urgency in his voice. Whatever was happening to me, it was dangerous – not just to me, but to everyone around me.
-
-"I'm sorry, Lira," I heard myself say, my voice sounding distant and cold. "There's nothing to talk about."
-
-The hurt that flashed across her face was like a physical blow. Without another word, she turned and disappeared into the night.
-
-As I closed the door, I felt the last threads of my old life slipping away. I was alone now, truly alone, with nothing but the whispers of the forgotten to keep me company.
-
 In the days that followed, the village became a minefield of suspicious glances and hushed conversations that fell silent as I approached. Even Erol seemed to be distancing himself, our training sessions growing shorter and more perfunctory.
 
 It all came to a head one morning as I made my way to the sacred grove. A group of elders, including Mera, stood waiting for me. Their faces were grim, their postures tense.
 
 "Kai," Mera said, her voice heavy with regret. "The council has made a decision. We believe it's best if you... take some time away from the village. To meditate, to gain control over these... unusual manifestations of your power."
-
-The words hit me like a physical blow. Exile. They were exiling me.
 
 "But..." I began, panic rising in my throat. "But I'm a shaman now. I'm bonded to Raik. You can't just..."
 
